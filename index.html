@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کلینیک دکتر مؤتمن</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>دکتر محمدحسین مؤتمن</h1>
+    <p>فوق تخصص ارتوپدی — ۱۳ سال تجربه</p>
+  </header>
+
+  <nav>
+    <a href="#about">درباره دکتر</a>
+    <a href="#services">خدمات</a>
+    <a href="#articles">مقالات</a>
+    <a href="#appointment">نوبت‌دهی</a>
+    <a href="#contact">تماس</a>
+  </nav>
+
+  <section id="about">
+    <div class="card">
+      <h2>درباره دکتر</h2>
+      <p>دکتر محمدحسین مؤتمن، فوق تخصص ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="card">
+      <h2>خدمات</h2>
+      <ul>
+        <li>جراحی تعویض مفصل زانو و لگن</li>
+        <li>درمان شکستگی‌ها و آسیب‌های ورزشی</li>
+        <li>اصلاح انحراف ستون فقرات</li>
+        <li>فیزیوتراپی و توان‌بخشی پس از عمل</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="articles">
+    <div class="card">
+      <h2>مقالات و آموزش‌ها</h2>
+      <p>در این بخش می‌توانید مقالات علمی و آموزش‌های مرتبط با ارتوپدی را مطالعه کنید.</p>
+    </div>
+  </section>
+
+  <section id="appointment">
+    <div class="card">
+      <h2>نوبت‌دهی آنلاین</h2>
+      <form id="appointmentForm">
+        <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
+        <input type="tel" name="phone" placeholder="شماره تلفن همراه" required>
+        <input type="date" name="date" required>
+        <select name="service" required>
+          <option value="">انتخاب خدمت</option>
+          <option value="visit">ویزیت تخصصی</option>
+          <option value="replacement">تعویض مفصل</option>
+          <option value="repair">ترمیم لیگامان</option>
+          <option value="rehab">توان‌بخشی</option>
+        </select>
+        <textarea name="note" placeholder="توضیحات بیشتر (اختیاری)" rows="4"></textarea>
+        <button type="submit">ثبت نوبت</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card">
+      <h2>تماس با ما</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="نام و نام خانوادگی" required>
+        <input type="email" placeholder="ایمیل" required>
+        <textarea placeholder="پیام شما" rows="5" required></textarea>
+        <button type="submit">ارسال پیام</button>
+      </form>
+      <p><strong>آدرس مطب:</strong> تهران، خیابان ...</p>
+      <p><strong>شماره تماس:</strong> 9122735646 98+</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
