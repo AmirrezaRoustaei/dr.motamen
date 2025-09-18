@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">دکتر محمدحسین مؤتمن</title>
+  <title id="pageTitle">کلینیک دکتر محمدحسین مؤتمن</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -75,7 +75,7 @@
         <textarea placeholder="پیام شما" rows="5" required></textarea>
         <button type="submit">ارسال پیام</button>
       </form>
-      <p><strong>آدرس مطب:</strong> تهران، خیابان ...</p>
+      <p><strong>آدرس کلینیک:</strong> تهران، چیتگر منطقه 22 ...</p>
       <p><strong>شماره تماس:</strong> +98 912 273 5646</p>
     </div>
   </section>
@@ -91,8 +91,12 @@
     const userLang = navigator.language || navigator.userLanguage;
 
     if (userLang.startsWith("en")) {
-      document.getElementById("pageTitle").innerText = "Dr. Motamen";
-      document.getElementById("headerTitle").innerText = "Dr. Motamen";
+      document.getElementById("pageTitle").innerText = "Dr. Motamen Clinic";
+      document.getElementById("headerTitle").innerText = "Dr.MohammadHossein Motamen";
+    }
+    else if (userLang.startsWith("per")) {
+      document.getElementById("pageTitle").innerText = "کلینیک دکتر محمدحسین مؤتمن";
+      document.getElementById("headerTitle").innerText = "دکتر محمدحسین مؤتمن";
     }
   </script>
 </body>
