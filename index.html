@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>کلینیک دکتر مؤتمن</title>
+  <title id="pageTitle">دکتر محمدحسین مؤتمن</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>دکتر محمدحسین مؤتمن | dr.motamen </h1>
+    <h1 id="headerTitle">دکتر محمدحسین مؤتمن</h1>
     <p>فوق تخصص ارتوپدی — ۱۳ سال تجربه</p>
   </header>
 
@@ -75,8 +75,8 @@
         <textarea placeholder="پیام شما" rows="5" required></textarea>
         <button type="submit">ارسال پیام</button>
       </form>
-      <p><strong>آدرس کلینیک:</strong> تهران، چیتگر ...</p>
-      <p><strong>شماره تماس:</strong> 9122735646 98+</p>
+      <p><strong>آدرس مطب:</strong> تهران، خیابان ...</p>
+      <p><strong>شماره تماس:</strong> +98 912 273 5646</p>
     </div>
   </section>
 
@@ -85,5 +85,16 @@
   </footer>
 
   <script src="app.js"></script>
+
+  <script>
+    // بررسی زبان مرورگر
+    const userLang = navigator.language || navigator.userLanguage;
+
+    if (userLang.startsWith("en")) {
+      document.getElementById("pageTitle").innerText = "Dr. Motamen";
+      document.getElementById("headerTitle").innerText = "Dr. Motamen";
+    }
+  </script>
 </body>
 </html>
+
