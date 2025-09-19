@@ -2,10 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+// اتصال به دیتابیس MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/drmotamen', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
+}).then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB Error:", err));
 
 // مدل نوبت
 const Appointment = mongoose.model('Appointment', new mongoose.Schema({
@@ -14,27 +16,27 @@ const Appointment = mongoose.model('Appointment', new mongoose.Schema({
   date: String,
   service: String,
   note: String,
-  ip: String   // ✅ اضافه شد
+  ip: String
 }, { timestamps: true }));
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// گرفتن آی‌پی کاربر
+// تابع گرفتن آی‌پی کاربر
 function getClientIp(req) {
   return req.headers['x-forwarded-for']?.split(',').shift()
     || req.socket?.remoteAddress
     || null;
 }
 
-// ثبت نوبت با آی‌پی
+// ➕ ثبت نوبت
 app.post('/api/appointments', async (req, res) => {
   try {
     const clientIp = getClientIp(req);
     const appointment = await Appointment.create({
       ...req.body,
-      ip: clientIp   // ✅ ذخیره آی‌پی
+      ip: clientIp
     });
     res.json({ success: true, appointment });
   } catch (err) {
@@ -43,15 +45,15 @@ app.post('/api/appointments', async (req, res) => {
   }
 });
 
-// گرفتن لیست نوبت‌ها (با آی‌پی‌ها)
+// 📋 گرفتن لیست همه نوبت‌ها
 app.get('/api/appointments', async (req, res) => {
-  const list = await Appointment.find().sort({ createdAt: -1 });
-  res.json(list);
+  try {
+    const list = await Appointment.find().sort({ createdAt: -1 });
+    res.json(list);
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'خطا در دریافت اطلاعات' });
+  }
 });
 
-app.listen(4000, () => console.log('✅ Server running on http://localhost:4000'));
-
-  res.json(list);
-});
-
-app.listen(4000, () => console.log('✅ Server running on http://localhost:4000'));
+const PORT = 4000;
+app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
