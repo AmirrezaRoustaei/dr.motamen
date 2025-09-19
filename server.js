@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 // اتصال به دیتابیس MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/drmotamen', {
+mongoose.connect('mongodb://217.144.104.6:27017/drmotamen', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log("✅ MongoDB Connected"))
