@@ -17,6 +17,11 @@ const articlesFA = [
     desc: "توضیح کوتاه درباره مقاله سوم...",
     link: "https://example.com/article3",
     linkText: "مطالعه مقاله"
+  },
+  { title: "عنوان مقاله چهارم",
+    desc: "توضیح کوتاه درباره مقاله چهارم...",
+    link: "https://example.com/article4",
+    linkText: "مطالعه مقاله"
   }
 ];
 
@@ -39,6 +44,12 @@ const articlesEN = [
     desc: "A short description about the third article...",
     link: "https://example.com/article3",
     linkText: "Read Article"
+  },
+    {
+    title: "Fourth Article",
+    desc: "A short description about the fourth article...",
+    link: "https://example.com/article4",
+    linkText: "Read Article"
   }
 ];
 
@@ -49,17 +60,23 @@ function renderArticles(lang) {
 
   const data = lang === "en" ? articlesEN : articlesFA;
 
-  data.forEach(article => {
+  data.forEach((article, index) => {
     const div = document.createElement("div");
     div.className = "article-item";
+
+    // فقط یک خط کوتاه از توضیح مقاله نشان داده می‌شود
+    const shortDesc = article.desc.split(".")[0] + ".";
+
     div.innerHTML = `
       <h3>${article.title}</h3>
-      <p>${article.desc}</p>
-      <a href="${article.link}" target="_blank">${article.linkText}</a>
+      <p>${shortDesc}</p>
+      <a href="article${index + 1}.html">${article.linkText}</a>
     `;
+
     list.appendChild(div);
   });
 }
+
 
 // تابع تغییر زبان (اینجا اون خط renderArticles(lang) رو گذاشتم)
 function setLanguage(lang) {
@@ -68,8 +85,8 @@ function setLanguage(lang) {
     document.documentElement.dir = "ltr";
 
     document.getElementById("pageTitle").innerText = "Dr. Motamen Clinic";
-    document.getElementById("headerTitle").innerText = "Dr. MohammadHossein Motamen";
-    document.getElementById("headerSubtitle").innerText = "Orthopedic Specialist — 13 years of experience";
+    document.getElementById("headerTitle").innerText = "Dr. Mohammad Motamen";
+    document.getElementById("headerSubtitle").innerText = "Orthopedic surgery — 13 years of experience";
 
     document.getElementById("navAbout").innerText = "About";
     document.getElementById("navServices").innerText = "Services";
@@ -78,10 +95,13 @@ function setLanguage(lang) {
     document.getElementById("navContact").innerText = "Contact";
 
     document.getElementById("aboutTitle").innerText = "About Dr. Motamen";
-    document.getElementById("aboutText").innerText = "Dr. MohammadHossein Motamen, orthopedic subspecialist with over 13 years of experience treating bone, joint, and spine problems.";
+    document.getElementById("aboutText").innerText = "Dr. Mohammad Motamen, orthopedic surgery with over 13 years of experience treating bone, joint, and spine problems.";
 
-    document.getElementById("licenseLabel").innerText = "Clinic License Number:";
-    document.getElementById("medicalIdLabel").innerText = "Medical Council Number:";
+
+    document.getElementById("medicalIdLabel").innerText = "Medical Council Number:4022";
+    
+    document.getElementById("membership").innerText = "Member of the European Orthopedic surgery Association — Prague Reg. No: MA EU020 M774-ORTHOPEDIST, Member since: 2.10.2012";
+
 
     document.getElementById("servicesTitle").innerText = "Services";
     document.getElementById("servicesList").innerHTML = `
@@ -91,12 +111,16 @@ function setLanguage(lang) {
       <li>Post-surgery physiotherapy and rehabilitation</li>
     `;
 
-    document.getElementById("articlesTitle").innerText = "Articles & Education";
+    document.getElementById("articlesTitle").innerText = "Articles ";
     document.getElementById("articlesText").innerText = "Here you can read scientific articles and educational materials related to orthopedics.";
 
     document.getElementById("degreeTitle").innerText = "Medical Certificates & Degrees";
     document.getElementById("swissCaption").innerText = "Medical Card (Switzerland)";
     document.getElementById("frenchCaption").innerText = "Medical Degree (France)";
+    document.getElementById("frenchCaption2").innerText = "Medical Degree (France)";
+    document.getElementById("frenchCaption3").innerText = "Medical Degree (France)";
+    document.getElementById("frenchCaption4").innerText = "Medical Degree (France)";
+    document.getElementById("licenseCaption").innerText = "Medical Practice License";
     document.getElementById("degreeNote").innerText = "(The images are shown in reduced size. Click to enlarge in the final version.)";
 
     document.getElementById("appointmentTitle").innerText = "Online Appointment";
@@ -112,12 +136,9 @@ function setLanguage(lang) {
     document.getElementById("submitAppointment").innerText = "Submit Appointment";
 
     document.getElementById("contactTitle").innerText = "Contact Us";
-    document.getElementById("contactName").placeholder = "Full Name";
-    document.getElementById("contactEmail").placeholder = "Email";
-    document.getElementById("contactMessage").placeholder = "Your Message";
-    document.getElementById("submitContact").innerText = "Send Message";
+  
     document.getElementById("address").innerHTML = "<strong>Clinic Address:</strong> Tehran, Chitgar District 22 ...";
-    document.getElementById("phone").innerHTML = "<strong>Phone:</strong> +98-21-4419";
+  
 
     document.getElementById("footerText").innerText = "© 2025 All rights reserved.";
   }
@@ -126,8 +147,8 @@ function setLanguage(lang) {
     document.documentElement.lang = "fa";
     document.documentElement.dir = "rtl";
 
-    document.getElementById("pageTitle").innerText = "کلینیک دکتر محمدحسین مؤتمن";
-    document.getElementById("headerTitle").innerText = "دکتر محمدحسین مؤتمن";
+    document.getElementById("pageTitle").innerText = "کلینیک دکتر محمد مؤتمن";
+    document.getElementById("headerTitle").innerText = "دکتر محمد مؤتمن";
     document.getElementById("headerSubtitle").innerText = "فوق تخصص ارتوپدی — ۱۳ سال تجربه";
 
     document.getElementById("navAbout").innerText = "درباره دکتر";
@@ -137,10 +158,12 @@ function setLanguage(lang) {
     document.getElementById("navContact").innerText = "تماس";
 
     document.getElementById("aboutTitle").innerText = "درباره دکتر";
-    document.getElementById("aboutText").innerText = "دکتر محمدحسین مؤتمن، فوق تخصص ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.";
+    document.getElementById("aboutText").innerText = "دکتر محمد مؤتمن، فوق تخصص ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.";
 
-    document.getElementById("licenseLabel").innerText = "شماره جواز کلینیک:";
-    document.getElementById("medicalIdLabel").innerText = "شماره نظام پزشکی:";
+   
+    document.getElementById("medicalIdLabel").innerText = "شماره نظام پزشکی:۴۰۲۲";
+
+    document.getElementById("membership").innerText = "عضو انجمن پزشکان ارتوپد اروپا – پراگ شماره رجیستری: MA EU020 M774-ORTHOPEDIST، تاریخ عضویت: 2.10.2012";
 
     document.getElementById("servicesTitle").innerText = "خدمات";
     document.getElementById("servicesList").innerHTML = `
@@ -150,12 +173,16 @@ function setLanguage(lang) {
       <li>فیزیوتراپی و توان‌بخشی پس از عمل</li>
     `;
 
-    document.getElementById("articlesTitle").innerText = "مقالات و آموزش‌ها";
-    document.getElementById("articlesText").innerText = "در این بخش می‌توانید مقالات علمی و آموزش‌های مرتبط با ارتوپدی را مطالعه کنید.";
+    document.getElementById("articlesTitle").innerText = "مقالات";
+    document.getElementById("articlesText").innerText = "در این بخش می‌توانید مقالات علمی  مرتبط با ارتوپدی را مطالعه کنید.";
 
     document.getElementById("degreeTitle").innerText = "مدارک و سوابق تحصیلی";
     document.getElementById("swissCaption").innerText = "کارت پزشکی (سوئیس)";
     document.getElementById("frenchCaption").innerText = "مدرک پزشکی (فرانسه)";
+    document.getElementById("frenchCaption2").innerText = "مدرک پزشکی (فرانسه)";
+    document.getElementById("frenchCaption3").innerText = "مدرک پزشکی (فرانسه)";
+    document.getElementById("frenchCaption4").innerText = "مدرک پزشکی (فرانسه)";
+    document.getElementById("licenseCaption").innerText = "پروانه طبابت";
     document.getElementById("degreeNote").innerText = "(تصاویر مدارک برای نمایش کوچک شده‌اند، روی نسخه نهایی می‌توانید با کلیک بزرگنمایی کنید)";
 
     document.getElementById("appointmentTitle").innerText = "نوبت‌دهی آنلاین";
@@ -171,12 +198,9 @@ function setLanguage(lang) {
     document.getElementById("submitAppointment").innerText = "ثبت نوبت";
 
     document.getElementById("contactTitle").innerText = "تماس با ما";
-    document.getElementById("contactName").placeholder = "نام و نام خانوادگی";
-    document.getElementById("contactEmail").placeholder = "ایمیل";
-    document.getElementById("contactMessage").placeholder = "پیام شما";
-    document.getElementById("submitContact").innerText = "ارسال پیام";
+
     document.getElementById("address").innerHTML = "<strong>آدرس کلینیک:</strong> تهران، چیتگر منطقه 22 ...";
-    document.getElementById("phone").innerHTML = "<strong>شماره تماس:</strong> ۴۴۱۹-۰۲۱";
+    
 
     document.getElementById("footerText").innerText = "© 2025 تمامی حقوق محفوظ است.";
   }
