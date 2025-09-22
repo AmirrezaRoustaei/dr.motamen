@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">کلینیک دکتر محمدحسین مؤتمن</title>
+  <title id="pageTitle">کلینیک دکتر محمد مؤتمن</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .lang-switch {
@@ -29,8 +29,8 @@
       <button onclick="setLanguage('en')">EN</button>
     </div>
 
-    <h1 id="headerTitle">دکتر محمدحسین مؤتمن</h1>
-    <p id="headerSubtitle">فوق تخصص ارتوپدی — ۱۳ سال تجربه</p>
+    <h1 id="headerTitle">دکتر محمد مؤتمن</h1>
+    <p id="headerSubtitle">فوق تخصص جراحی ارتوپدی — ۱۳ سال تجربه</p>
   </header>
 
   <nav>
@@ -41,18 +41,24 @@
     <a href="#contact" id="navContact">تماس</a>
   </nav>
 
-  <section id="about">
-    <div class="card">
-      <h2 id="aboutTitle">درباره دکتر</h2>
-      <p id="aboutText">
-        دکتر محمدحسین مؤتمن، فوق تخصص ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.
-      </p>
-      <ul>
-        <li><strong id="licenseLabel">شماره جواز کلینیک:</strong> ................</li>
-        <li><strong id="medicalIdLabel">شماره نظام پزشکی:</strong> ................</li>
-      </ul>
-    </div>
-  </section>
+<section id="about">
+  <div class="card">
+    <h2 id="aboutTitle">درباره دکتر</h2>
+    <p id="aboutText">
+      دکتر محمدحسین مؤتمن، فوق تخصص ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.
+    </p>
+
+    <!-- مشخصات -->
+    <ul>
+     
+      <li><strong id="medicalIdLabel">شماره نظام پزشکی:۴۰۲۲</strong>  </li>
+      <li id="membership">عضو انجمن پزشکان ارتوپد اروپا – پراگ  
+شماره رجیستری: MA EU020 M774-ORTHOPEDIST، تاریخ عضویت: 2.10.2012
+</li>
+    </ul>
+  </div>
+</section>
+
 
   <section id="services">
     <div class="card">
@@ -68,8 +74,8 @@
 
 <section id="articles">
   <div class="card">
-    <h2 id="articlesTitle">مقالات و آموزش‌ها</h2>
-    <p id="articlesText">در این بخش می‌توانید مقالات علمی و آموزش‌های مرتبط با ارتوپدی را مطالعه کنید.</p>
+    <h2 id="articlesTitle">مقالات  </h2>
+    <p id="articlesText">در این بخش می‌توانید مقالات علمی مرتبط با ارتوپدی را مطالعه کنید.</p>
 
     <!-- لیست مقالات اینجا ساخته میشه -->
     <div id="articlesList"></div>
@@ -85,6 +91,27 @@
         <img src="images/french-degree.jpg" alt="French Medical Degree" style="width:150px; border:1px solid #ccc; border-radius:8px;">
         <p id="frenchCaption">مدرک پزشکی (فرانسه)</p>
       </div>
+
+      <div style="text-align:center;">
+        <img src="images/french-degree2.jpg" alt="French Medical Degree" style="width:150px; border:1px solid #ccc; border-radius:8px;">
+        <p id="frenchCaption2">مدرک پزشکی (فرانسه)</p>
+      </div>
+
+      <div style="text-align:center;">
+        <img src="images/french-degree3.jpg" alt="French Medical Degree" style="width:150px; border:1px solid #ccc; border-radius:8px;">
+        <p id="frenchCaption3">مدرک پزشکی (فرانسه)</p>
+      </div>
+
+      <div style="text-align:center;">
+        <img src="images/french-degree4.jpg" alt="French Medical Degree" style="width:150px; border:1px solid #ccc; border-radius:8px;">
+        <p id="frenchCaption4">مدرک پزشکی (فرانسه)</p>
+      </div>
+
+      <div style="text-align:center;">
+        <img src="images/medical-license.jpg" alt="Medical Practice License" style="height:160px; border:1px solid #ccc; border-radius:8px;">
+        <p id="licenseCaption" style="font-size:0.9rem; margin-top:5px;">پروانه طبابت</p>
+      </div>
+
     </div>
     <p id="degreeNote" style="font-size:0.85rem; margin-top:10px; color:#555;">
       (تصاویر مدارک برای نمایش کوچک شده‌اند، روی نسخه نهایی می‌توانید با کلیک بزرگنمایی کنید)
@@ -118,14 +145,14 @@
   <section id="contact">
     <div class="card">
       <h2 id="contactTitle">تماس با ما</h2>
-      <form id="contactForm">
-        <input type="text" id="contactName" placeholder="نام و نام خانوادگی" required>
-        <input type="email" id="contactEmail" placeholder="ایمیل" required>
-        <textarea id="contactMessage" placeholder="پیام شما" rows="5" required></textarea>
-        <button type="submit" id="submitContact">ارسال پیام</button>
-      </form>
+         <p id="degreeNote" style="font-size:1.85rem; margin-top:10px; color:#555;">
+           motamen@drmotamen.com
+         </p>
+
+
+      
       <p id="address"><strong>آدرس کلینیک:</strong> تهران، چیتگر منطقه 22 ...</p>
-      <p id="phone"><strong>شماره تماس:</strong> ۴۴۱۹-۰۲۱ </p>
+    
     </div>
   </section>
 
@@ -140,8 +167,8 @@
         document.documentElement.dir = "ltr";
 
         document.getElementById("pageTitle").innerText = "Dr. Motamen Clinic";
-        document.getElementById("headerTitle").innerText = "Dr. MohammadHossein Motamen";
-        document.getElementById("headerSubtitle").innerText = "Orthopedic Specialist — 13 years of experience";
+        document.getElementById("headerTitle").innerText = "Dr. Mohammad Motamen";
+        document.getElementById("headerSubtitle").innerText = "Orthopedic surgery — 13 years of experience";
 
         document.getElementById("navAbout").innerText = "About";
         document.getElementById("navServices").innerText = "Services";
@@ -150,10 +177,10 @@
         document.getElementById("navContact").innerText = "Contact";
 
         document.getElementById("aboutTitle").innerText = "About Dr. Motamen";
-        document.getElementById("aboutText").innerText = "Dr. MohammadHossein Motamen, orthopedic subspecialist with over 13 years of experience treating bone, joint, and spine problems.";
+        document.getElementById("aboutText").innerText = "Dr. Mohammad Motamen, orthopedic surgery with over 13 years of experience treating bone, joint, and spine problems.";
 
-        document.getElementById("licenseLabel").innerText = "Clinic License Number:";
-        document.getElementById("medicalIdLabel").innerText = "Medical Council Number:";
+  
+        document.getElementById("medicalIdLabel").innerText = "Medical Council Number: 4022";
 
         document.getElementById("servicesTitle").innerText = "Services";
         document.getElementById("servicesList").innerHTML = `
@@ -163,8 +190,8 @@
           <li>Post-surgery physiotherapy and rehabilitation</li>
         `;
 
-        document.getElementById("articlesTitle").innerText = "Articles & Education";
-        document.getElementById("articlesText").innerText = "Here you can read scientific articles and educational materials related to orthopedics.";
+        document.getElementById("articlesTitle").innerText = "Articles";
+        document.getElementById("articlesText").innerText = "Here you can read scientific articles materials related to orthopedics.";
 
         document.getElementById("appointmentTitle").innerText = "Online Appointment";
         document.getElementById("inputName").placeholder = "Full Name";
@@ -179,12 +206,9 @@
         document.getElementById("submitAppointment").innerText = "Submit Appointment";
 
         document.getElementById("contactTitle").innerText = "Contact Us";
-        document.getElementById("contactName").placeholder = "Full Name";
-        document.getElementById("contactEmail").placeholder = "Email";
-        document.getElementById("contactMessage").placeholder = "Your Message";
-        document.getElementById("submitContact").innerText = "Send Message";
+
         document.getElementById("address").innerHTML = "<strong>Clinic Address:</strong> Tehran, Chitgar District 22 ...";
-        document.getElementById("phone").innerHTML = "<strong>Phone:</strong> +98-21-4419";
+        
 
         document.getElementById("footerText").innerText = "© 2025 All rights reserved.";
       }
@@ -194,7 +218,7 @@
 
         document.getElementById("pageTitle").innerText = "کلینیک دکتر محمدحسین مؤتمن";
         document.getElementById("headerTitle").innerText = "دکتر محمدحسین مؤتمن";
-        document.getElementById("headerSubtitle").innerText = "فوق تخصص ارتوپدی — ۱۳ سال تجربه";
+        document.getElementById("headerSubtitle").innerText = "فوق تخصص جراحی ارتوپدی — ۱۳ سال تجربه";
 
         document.getElementById("navAbout").innerText = "درباره دکتر";
         document.getElementById("navServices").innerText = "خدمات";
@@ -203,10 +227,10 @@
         document.getElementById("navContact").innerText = "تماس";
 
         document.getElementById("aboutTitle").innerText = "درباره دکتر";
-        document.getElementById("aboutText").innerText = "دکتر محمدحسین مؤتمن، فوق تخصص ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.";
+        document.getElementById("aboutText").innerText = "دکتر محمدحسین مؤتمن، فوق تخصص جراحی ارتوپدی با بیش از ۱۳ سال تجربه در درمان مشکلات استخوان، مفاصل و ستون فقرات.";
 
-        document.getElementById("licenseLabel").innerText = "شماره جواز کلینیک:";
-        document.getElementById("medicalIdLabel").innerText = "شماره نظام پزشکی:";
+        
+        document.getElementById("medicalIdLabel").innerText = "شماره نظام پزشکی:۴۰۲۲";
 
         document.getElementById("servicesTitle").innerText = "خدمات";
         document.getElementById("servicesList").innerHTML = `
@@ -216,7 +240,7 @@
           <li>فیزیوتراپی و توان‌بخشی پس از عمل</li>
         `;
 
-        document.getElementById("articlesTitle").innerText = "مقالات و آموزش‌ها";
+        document.getElementById("articlesTitle").innerText = "مقالات";
         document.getElementById("articlesText").innerText = "در این بخش می‌توانید مقالات علمی و آموزش‌های مرتبط با ارتوپدی را مطالعه کنید.";
 
         document.getElementById("appointmentTitle").innerText = "نوبت‌دهی آنلاین";
@@ -232,13 +256,9 @@
         document.getElementById("submitAppointment").innerText = "ثبت نوبت";
 
         document.getElementById("contactTitle").innerText = "تماس با ما";
-        document.getElementById("contactName").placeholder = "نام و نام خانوادگی";
-        document.getElementById("contactEmail").placeholder = "ایمیل";
-        document.getElementById("contactMessage").placeholder = "پیام شما";
-        document.getElementById("submitContact").innerText = "ارسال پیام";
+  
         document.getElementById("address").innerHTML = "<strong>آدرس کلینیک:</strong> تهران، چیتگر منطقه 22 ...";
-        document.getElementById("phone").innerHTML = "<strong>شماره تماس:</strong> ۴۴۱۹-۰۲۱";
-
+     
         document.getElementById("footerText").innerText = "© 2025 تمامی حقوق محفوظ است.";
       }
     }
